@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Earth Quiz</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <img id="logo" src="images/logo.png" alt="Earth Quiz logo">
+    <h1>Earth Quiz</h1>
+  </header>
+
+  <main id="main">
+    <section id="start-screen" class="card">
+      <h2>Test your world capitals</h2>
+      <p id="status">Loading questions... (will fetch a list of national capitals from Wikipedia on first run)</p>
+      <button id="start-btn" class="btn">Start Quiz</button>
+      <div class="small">Note: If offline, a bundled fallback set will be used. Replace <code>images/logo.png</code> with your provided earth image (black background) for the app icon.</div>
+    </section>
+
+    <section id="quiz-screen" class="card hidden">
+      <div class="meta">
+        <div>Question <span id="qnum">0</span>/<span id="qtotal">0</span></div>
+        <div>XP: <span id="xp">0</span></div>
+      </div>
+      <h2 id="question">Which is the capital of ?</h2>
+      <div id="options" class="options"></div>
+      <div class="actions">
+        <button id="next-btn" class="btn hidden">Next</button>
+        <button id="end-btn" class="btn ghost">End Quiz</button>
+      </div>
+    </section>
+
+    <section id="result-screen" class="card hidden">
+      <h2>Results</h2>
+      <p id="result-summary"></p>
+      <button id="retry-btn" class="btn">Play Again</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Earth Quiz — offline-capable PWA. Questions sourced from Wikipedia's "List of national capitals".</small>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
